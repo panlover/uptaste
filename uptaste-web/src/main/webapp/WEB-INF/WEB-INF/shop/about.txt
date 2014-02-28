@@ -1,0 +1,3 @@
+index.jsp是客户访问时访问的页面
+
+saveupdate.jsp是商户编辑店铺时使用
