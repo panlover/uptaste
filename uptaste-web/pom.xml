@@ -138,6 +138,6 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>customer-web</finalName>
+        <finalName>uptaste-web</finalName>
     </build>
 </project>

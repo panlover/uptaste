@@ -23,23 +23,9 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
         (see header.jsp for more details) -->
     <mvc:resources mapping="/resources/**" location="/resources/"/>
 
-
-    <!--<mvc:view-controller path="/" view-name="index"/>-->
-
-    <!-- serve static resources (*.html, ...) from src/main/webapp/ -->
-    <mvc:default-servlet-handler/>
-
-    <!--
-        - Message source for this context, loaded from localized "messages_xx" files.
-        - Files are stored inside src/main/resources
-    -->
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"
-          p:basename="messages/messages"/>
+          p:basename="messages"/>
 
-    <!--
-        - This bean resolves specific types of exceptions to corresponding logical
-        - view names for error views.
-    -->
     <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
         <!-- view name resolved using bean of type InternalResourceViewResolver (declared in mvc-view-config.xml) -->
         <property name="defaultErrorView" value="exception"/>
@@ -53,11 +39,11 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
     <!-- 获取本地 -->
     <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver"/>
     <!--
-- The ContentNegotiatingViewResolver delegates to the InternalResourceViewResolver and BeanNameViewResolver,
-- and uses the requested media type (determined by the path extension) to pick a matching view.
-- When the media type is 'text/html', it will delegate to the InternalResourceViewResolver's JstlView,
-- otherwise to the BeanNameViewResolver.
--->
+    - The ContentNegotiatingViewResolver delegates to the InternalResourceViewResolver and BeanNameViewResolver,
+    - and uses the requested media type (determined by the path extension) to pick a matching view.
+    - When the media type is 'text/html', it will delegate to the InternalResourceViewResolver's JstlView,
+    - otherwise to the BeanNameViewResolver.
+    -->
         <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
             <!--<property name="contentNegotiationManager" ref="cnManager"/>-->
 

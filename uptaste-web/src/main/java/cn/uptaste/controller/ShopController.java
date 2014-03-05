@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 /**
@@ -30,7 +29,7 @@ public class ShopController {
         Merchant merchant=merchantService.getMerchantByUsername(merchantName);
         modelAndView.addObject("merchant",merchant);
         modelAndView.addObject("shop",new Shop());
-        modelAndView.setViewName("shop/saveupdate");
+        modelAndView.setViewName("shop/save");
         return modelAndView;
     }
 
@@ -38,7 +37,7 @@ public class ShopController {
     public ModelAndView addShop(@Valid Shop shop,BindingResult result,HttpServletRequest request,@PathVariable String merchantName){
         ModelAndView modelAndView= new ModelAndView();
         if (result.hasErrors()) {
-            modelAndView.setViewName("shop/saveupdate");
+            modelAndView.setViewName("shop/save");
             return modelAndView;
         }
         Merchant merchant=merchantService.getMerchantByUsername(merchantName);

@@ -1,0 +1,17 @@
+.header-menu {
+    padding-top: 10px;
+}
+
+.leftmenu {
+    background-color: #F7F7F7;
+    border-radius: 5px;
+    text-shadow: 0 1px 0 #FFFFFF;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.leftmenu li ul li a {
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+}

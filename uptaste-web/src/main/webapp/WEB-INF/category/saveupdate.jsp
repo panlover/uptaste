@@ -26,7 +26,8 @@
     名称：<form:input path="name"></form:input><br>
     说明：<form:textarea path="shortDesc" ></form:textarea><br>
     可用？是<form:radiobutton path="status" value="1" checked="checked"></form:radiobutton>
-         否<form:radiobutton path="status" value="0"></form:radiobutton>
+         否<form:radiobutton path="status" value="0"></form:radiobutton><br>
+
     <div class="form-actions">
         <c:choose>
             <c:when test="${category['new']}">
